@@ -64,7 +64,7 @@ C_SOURCES += $(BSP_DIR)common/src/hal_i2c.c
 C_SOURCES += $(BSP_DIR)common/src/hal_plic.c
 C_SOURCES += $(BSP_DIR)common/src/hal_spi.c
 C_SOURCES += $(BSP_DIR)common/src/hal_uart.c
-C_SOURCES += $(BSP_DIR)$(CHIP)/src/hal_rcc.c
+# C_SOURCES += $(BSP_DIR)$(CHIP)/src/hal_rcc.c
 
 # LIB sources
 INCLUDES  += $(foreach LIBRARY_NAME,$(LIBRARIES),-I$(LIB_DIR)$(LIBRARY_NAME)/inc)
@@ -97,8 +97,8 @@ TARGET_VERILOG = $(BUILD_DIR)$(TARGET).out
 #################################
 
 # MCU Settings
-ARCH = rv64imafdc
-ABI = lp64d
+ARCH = rv32imac
+ABI = ilp32
 CODEMODEL = medany
 
 ifeq ($(USE_HTIF), 1)
